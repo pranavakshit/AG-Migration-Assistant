@@ -50,13 +50,13 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path release | Out-Null
-          Copy-Item dist/ag-migration-assistant.exe release/
+          Copy-Item dist/ag-migration-assistant.exe "release/${{ matrix.artifact-name }}.exe"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact-name }}
-          path: release/ag-migration-assistant.exe
+          path: release/${{ matrix.artifact-name }}.exe
 
   publish:
     needs: build
