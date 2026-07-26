@@ -74,5 +74,8 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          files: release-assets/**/*.exe
+          files: |
+            release-assets/ag-migration-assistant-win-x86/ag-migration-assistant-win-x86.exe
+            release-assets/ag-migration-assistant-win-x64/ag-migration-assistant-win-x64.exe
+            release-assets/ag-migration-assistant-win-arm64/ag-migration-assistant-win-arm64.exe
           generate_release_notes: true
