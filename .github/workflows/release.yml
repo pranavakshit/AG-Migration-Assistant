@@ -51,13 +51,12 @@ jobs:
         run: |
           New-Item -ItemType Directory -Force -Path release | Out-Null
           Copy-Item dist/ag-migration-assistant.exe release/
-          Compress-Archive -Path release/ag-migration-assistant.exe -DestinationPath "${{ matrix.artifact-name }}.zip" -Force
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.artifact-name }}
-          path: ${{ matrix.artifact-name }}.zip
+          path: release/ag-migration-assistant.exe
 
   publish:
     needs: build
@@ -75,4 +74,5 @@ jobs:
       - name: Create release
         uses: softprops/action-gh-release@v2
         with:
-          files: release-assets/**/*.zip
+          files: release-assets/**/*.exe
+          generate_release_notes: true

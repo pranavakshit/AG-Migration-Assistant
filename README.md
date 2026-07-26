@@ -35,7 +35,7 @@ GitHub Actions builds Windows executables for:
 - `win-x64`
 - `win-arm64`
 
-Download the matching asset from the GitHub Releases page.
+Download the matching `.exe` asset from the GitHub Releases page.
 
 ## Safety
 
@@ -43,4 +43,3 @@ Back up both folders before running the migrator:
 
 - `C:\Users\prana\.gemini\antigravity`
 - `C:\Users\prana\.gemini\antigravity-ide`
-
